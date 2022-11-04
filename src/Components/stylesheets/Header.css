@@ -1,0 +1,26 @@
+nav {
+	background-color: #222831;
+	color: #ffffff;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	height: 64px;
+	padding: 0 16px;
+}
+
+.rightNav {
+	display: flex;
+	gap: 0.8rem;
+}
+
+.saveAsPdf{
+	padding: 8px 20px;
+	background-color: #37AB00;
+}
+.reset {
+	padding: 8px 20px;
+	background-color: #FF2F2F;
+}
+

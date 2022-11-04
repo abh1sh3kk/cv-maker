@@ -1,0 +1,22 @@
+main {
+	background-color: white;
+	min-height: 100vh;
+
+	display: flex;
+}
+
+.previewSection, .inputSection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.inputSection {
+	background-color: rgb(225, 225, 225);
+	flex: 0.8;
+}
+
+.previewSection {
+	flex: 1.2;
+	padding: 2rem 0;
+}

@@ -1,7 +1,10 @@
 .inputFields {
 	min-width: 320px;
-	width: 80%;
-	/* background-color: red; */
 	min-height: 909px;
+	width: 80%;
 	box-shadow: 12px 14px 36px 5px rgba(0, 0, 0, 0.25);
+	padding: 10px 16px;
+}
+.personalInfo {
+	color: blue;	
 }

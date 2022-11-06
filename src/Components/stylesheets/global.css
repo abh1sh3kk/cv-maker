@@ -19,3 +19,13 @@ button:hover {
 button:active {
 	transform: scale(0.9);
 }
+input {
+	width: 80%;
+	margin-block: 0.3rem;
+	border-radius: 5px;
+	border: 2px solid grey;
+	outline: none;
+	height: 2rem;
+	padding: 0 0.5rem;
+
+}

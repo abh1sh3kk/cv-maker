@@ -8,6 +8,7 @@ button {
 	border: 0;
 	outline: none;
 	color: white;
+	background-color: #37ab00;
 	border-radius: 6px;
 	cursor: pointer;
 	padding: 0.25rem 0.5rem;

@@ -7,30 +7,49 @@ function Main() {
 
   const [cvData, setCVData] = React.useState({
     personalInfo: {
-      firstname: "",
-      lastname: "",
-      title: "",
-      email: "",
-      phoneNumber: "",
-      address: "",
+      firstname: "Rajesh",
+      lastname: "Hamal",
+      title: "Maha Nayak",
+      email: "gmail@rajeshhamal.com",
+      phoneNumber: "rajeshhamal",
+      address: "Rajesh Hamal Nibas",
     },
     experiences: [
       {
-        position: "",
-        company: "",
-        city: "",
-        from: "",
-        to: ""
-      }
+        key: "00", 
+        position: "Hero",
+        company: "Film",
+        city: "Nepal",
+        from: "2000",
+        to: "2014"
+      },
+      {
+        key: "01",
+        position: "Actor",
+        company: "Film",
+        city: "Nepal",
+        from: "2040",
+        to: "2045"
+      } 
     ],
     education: [
       {
-        university: "",
-        city: "",
-        degree: "",
-        subject: "",
-        from: "",
-        to: "",
+        key: "00",
+        university: "Rajesh Hamal University",
+        city: "Rajesh Hamal Nibas",
+        degree: "Hamal",
+        subject: "English",
+        from: "2020",
+        to: "2024",
+      },
+      {
+        key: "01",
+        university: "Hamal Rajesh University",
+        city: "Rajesh Hamal Nibas ko xeu",
+        degree: "25degree celcius",
+        subject: "verb object",
+        from: "2027",
+        to: "2030",
       }
     ]
 
@@ -41,7 +60,7 @@ function Main() {
   }
 
   function isExperience(event){
-    return event.target.classList.contains("experience")
+    return event.target.classList.contains("experienceInput")
   }
 
   function isEducation(event){
@@ -61,6 +80,12 @@ function Main() {
     }
   
     else if(isExperience(event)){
+      let experienceIndex = event.target.getAttribute("data-experience");
+
+      console.log(experienceIndex)
+
+      console.log(cvData.experiences[experienceIndex])
+
       console.log("Yes it is change in experience")
     }
 
@@ -71,18 +96,10 @@ function Main() {
 
   }
 
-  function handleIt(event){
-    setCVData(oldData => ({
-      ...oldData,
-      [event.target.name]: event.target.value
-    }))
-
-  }
-
   return (
     <main>
       <section className='inputSection'>
-        <InputFields cvData={cvData} handleChange={handleChange} handleIt={handleIt}/>
+        <InputFields cvData={cvData} handleChange={handleChange}/>
       </section>
 
       <section className='previewSection'>

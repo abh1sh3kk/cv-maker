@@ -8,8 +8,8 @@ function InputFields({cvData, handleChange, handleIt}) {
   return (
     <div className='inputFields'>
       <PersonalInfo cvData={cvData} handleChange={handleChange}/>
-      {/* <Experience cvData={cvData.experiences} handleChange={handleIt}/>
-      <Education cvData={cvData.education} handleChange={handleChange}/> */}
+      <Experience cvData={cvData} handleChange={handleChange}/>
+      <Education cvData={cvData} handleChange={handleChange}/>
     </div>
   )
   }

@@ -1,17 +1,25 @@
 import React from 'react'
+import ExBundle from './ExBundle';
 
-function Experience({cvData, handleIt}) {
+function Experience({cvData, handleChange}) {
 
+function addExperience() {
+	console.log("Added")
+}
+
+function removeExperience(event) {
+	console.log(event.target.getAttribute('data-experience'))
+}
   return (
    <div className='experience'>
 	<h1>Experience</h1>
-	<div className='experienceInputBundle'>
-		<input type="text" onChange={handleIt} placeholder="Position" value={cvData.experiences[0].position} name="position"/>
-		{/* <input type="text" onChange={handleChange} placeholder="Company" value={} name="lastname"/>
-		<input type="text" onChange={handleChange} placeholder="City" value={} name="title"/>
-		<input type="text" onChange={handleChange} placeholder="From" value={} name="address"/>
-		<input type="text" onChange={handleChange} placeholder="To" value={} name="phoneNumber"/> */}
-	</div>
+	{
+		cvData.experiences.map(experience => 
+			<ExBundle experience={experience} handleChange={handleChange} removeExperience={removeExperience} key={experience.key}/>
+		)
+		// <ExBundle cvData={cvData} handleChange={handleChange}/>
+	}
+	<button onClick={addExperience}>Add Experience</button>
     </div>
   )
 }

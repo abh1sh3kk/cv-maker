@@ -1,11 +1,9 @@
 import React from 'react'
 import "./stylesheets/CVstyles.css"
-import html2pdf from "html2pdf.js"
+
 
 function CV(props) {
-  const {firstname, lastname, title, address, phoneNumber, email} = props.cvData
-
-
+  const {firstname, lastname, title, address, phoneNumber, email} = props.cvData.personalInfo  
 
   return (
     <section>

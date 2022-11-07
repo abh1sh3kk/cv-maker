@@ -4,7 +4,7 @@ import Experience from './Experience';
 import Education from './Education';
 import "./stylesheets/inputStyles.css"
 
-function InputFields({cvData, handleChange, handleIt}) {
+function InputFields({cvData, handleChange}) {
   return (
     <div className='inputFields'>
       <PersonalInfo cvData={cvData} handleChange={handleChange}/>

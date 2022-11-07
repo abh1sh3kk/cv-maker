@@ -80,11 +80,11 @@ function Main() {
     }
   
     else if(isExperience(event)){
-      let experienceIndex = event.target.getAttribute("data-experience");
+      let experienceIndex = event.target.getAttribute("key");
 
-      console.log(experienceIndex)
+      console.log(event.target)
 
-      console.log(cvData.experiences[experienceIndex])
+      console.log()
 
       console.log("Yes it is change in experience")
     }

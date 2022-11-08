@@ -109,7 +109,7 @@ function Main() {
   }
 
   function isEducation(event){
-    return event.target.classList.contains("education")
+    return event.target.classList.contains("educationInput")
   }
   function findIndexFromKey(obj, key, name){
     return obj[name].findIndex(theObj => theObj.key === key)
@@ -121,7 +121,6 @@ function Main() {
     let targetIndex = findIndexFromKey(oldObj, targetKey, context);
     let changedProperty = event.target.name
 
-      console.log(event.target.value)
       let newObj = {
        ...oldObj
       }
@@ -143,10 +142,7 @@ function Main() {
     }
   
     else if(isExperience(event)){
-
       let context = "experience";
-      
-      // console.log(changeCVData(cvData, event, context))
 
        setCVData(cvData => {
         return changeCVData(cvData, event, context);
@@ -154,9 +150,13 @@ function Main() {
     }
 
     else if (isEducation(event)) {
-      console.log("Yes it is change in education")
+      let context = "education";
+      console.log(context, " yes it is here")
+
+      setCVData(cvData => {
+        return changeCVData(cvData, event, context);
+      })
     }
-    
   }
 
   return (

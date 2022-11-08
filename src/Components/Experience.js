@@ -3,25 +3,27 @@ import ExBundle from './ExBundle';
 
 function Experience({cvData, handleChange}) {
 
-function addExperience() {
-	console.log("Added")
-}
+console.log(cvData)
 
-function removeExperience(event) {
-	console.log(event.target.getAttribute('data-experience'))
-}
-  return (
-   <div className='experience'>
-	<h1>Experience</h1>
-	{
-		cvData.experiences.map(experience => 
-			<ExBundle experience={experience} handleChange={handleChange} removeExperience={removeExperience} key={experience.key}/>
-		)
-		// <ExBundle cvData={cvData} handleChange={handleChange}/>
+	function addExperience() {
+		console.log("Added")
 	}
-	<button onClick={addExperience}>Add Experience</button>
-    </div>
-  )
+
+	function removeExperience(event) {
+		console.log(event.target.getAttribute('data-experience'))
+	}
+
+	return (
+		<div className='experience'>
+			<h1>Experience</h1>
+			{
+				cvData.experience.map(individualExperience => 
+					<ExBundle experience={individualExperience} handleChange={handleChange} removeExperience={removeExperience} key={individualExperience.key}/>
+				)
+			}
+			<button onClick={addExperience}>Add Experience</button>
+		</div>
+  	)
 }
 
 export default Experience;

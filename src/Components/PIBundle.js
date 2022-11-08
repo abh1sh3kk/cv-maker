@@ -4,12 +4,12 @@ function PIBundle({cvData, handleChange}) {
 	const {firstname, lastname, title, address, phoneNumber, email} = cvData.personalInfo
   return (
     	<div className='personalInfoInputBundle'>
-		<input type="text" onChange={handleChange} placeholder="First Name" className="personalInfo" value={firstname} name="firstname"/>
-		<input type="text" onChange={handleChange} placeholder="Last Name" className="personalInfo" value={lastname} name="lastname"/>
-		<input type="text" onChange={handleChange} placeholder="Title" className="personalInfo" value={title} name="title"/>
-		<input type="text" onChange={handleChange} placeholder="Address" className="personalInfo" value={address} name="address"/>
-		<input type="text" onChange={handleChange} placeholder="Phone Number" className="personalInfo" value={phoneNumber} name="phoneNumber"/>
-		<input type="text" onChange={handleChange} placeholder="Email" className="personalInfo" value={email} name="email"/>
+		<input type="text" onChange={handleChange} className="personalInfo" placeholder="First Name" value={firstname} name="firstname"/>
+		<input type="text" onChange={handleChange} className="personalInfo" placeholder="Last Name" value={lastname} name="lastname"/>
+		<input type="text" onChange={handleChange} className="personalInfo" placeholder="Title" value={title} name="title"/>
+		<input type="text" onChange={handleChange} className="personalInfo" placeholder="Address" value={address} name="address"/>
+		<input type="text" onChange={handleChange} className="personalInfo" placeholder="Phone Number" value={phoneNumber} name="phoneNumber"/>
+		<input type="text" onChange={handleChange} className="personalInfo" placeholder="Email" value={email} name="email"/>
 	</div>
   )
 }

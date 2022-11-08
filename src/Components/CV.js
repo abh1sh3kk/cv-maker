@@ -15,7 +15,7 @@ function CV(props) {
       <div className='phoneNumber'>{phoneNumber}</div>
       <div className='email'>{email}</div>
       {
-        props.cvData.experiences.map(experience => <div className="experiences" key={experience.key}>{experience.position}</div>)
+        props.cvData.experience.map(exp => <div className="experience" key={exp.key}>{exp.position}</div>)
       }
       {
         props.cvData.education.map(degree => <div className="education" key={degree.key}>{degree.university}</div>)

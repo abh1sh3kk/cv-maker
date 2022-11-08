@@ -1,12 +1,25 @@
-import React from 'react'
+import React from "react";
+import EdBundle from "./EdBundle";
 
-function Education() {
+function Education({ cvData, handleChange }) {
+  // console.log(cvData.education)
   return (
     <>
-	<h1>Education</h1>
-	
+      <div className="education">
+        <h1>Education</h1>
+        {cvData.education.map((degree) => {
+          return (
+            <EdBundle
+              degree={degree}
+              handleChange={handleChange}
+              key={degree.key}
+            />
+          );
+        })}
+        <button>Add Education</button>
+      </div>
     </>
-  )
+  );
 }
 
-export default Education
+export default Education;

@@ -3,7 +3,7 @@ import PIBundle from './PIBundle'
 import "./stylesheets/personalInfoStyle.css"
 
 function PersonalInfo({cvData, handleChange}) {
-const {firstname, lastname, title, address, phoneNumber, email} = cvData.personalInfo
+// const {firstname, lastname, title, address, phoneNumber, email} = cvData.personalInfo
 
   return (
     <div className='personalInfo'>

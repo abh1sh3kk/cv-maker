@@ -14,7 +14,7 @@ function Main() {
       phoneNumber: "rajeshhamal",
       address: "Rajesh Hamal Nibas",
     },
-    experiences: [
+    experience: [
       {
         key: "00", 
         position: "Hero",
@@ -37,8 +37,7 @@ function Main() {
         key: "00",
         university: "Rajesh Hamal University",
         city: "Rajesh Hamal Nibas",
-        degree: "Hamal",
-        subject: "English",
+        course: "Masters in Rajesh Hamal", 
         from: "2020",
         to: "2024",
       },
@@ -46,14 +45,60 @@ function Main() {
         key: "01",
         university: "Hamal Rajesh University",
         city: "Rajesh Hamal Nibas ko xeu",
-        degree: "25degree celcius",
-        subject: "verb object",
+        course: "BSc. Rajesh Hamal",
         from: "2027",
         to: "2030",
       }
     ]
 
   });
+  // let newCVData = {
+  //   personalInfo: {
+  //     firstname: "Not Rajesh",
+  //     lastname: "Hamal",
+  //     title: "Not Maha Nayak",
+  //     email: "Not gmail@rajeshhamal.com",
+  //     phoneNumber: "Not rajeshhamal",
+  //     address: "Not Rajesh Hamal Nibas",
+  //   },
+  //   experience: [
+  //     {
+  //       key: "00", 
+  //       position: "Not Hero",
+  //       company: "Not Film",
+  //       city: "Not Nepal",
+  //       from: "Not 2000",
+  //       to: "Not 2014"
+  //     },
+  //     {
+  //       key: "01",
+  //       position: "Not Actor",
+  //       company: "Not Film",
+  //       city: "Not Nepal",
+  //       from: "Not 2040",
+  //       to: "Not 2045"
+  //     } 
+  //   ],
+  //   education: [
+  //     {
+  //       key: "00",
+  //       university: "Rajesh Hamal University",
+  //       city: "Rajesh Hamal Nibas",
+  //       course: "Masters in Rajesh Hamal", 
+  //       from: "2020",
+  //       to: "2024",
+  //     },
+  //     {
+  //       key: "01",
+  //       university: "Hamal Rajesh University",
+  //       city: "Rajesh Hamal Nibas ko xeu",
+  //       course: "BSc. Rajesh Hamal",
+  //       from: "2027",
+  //       to: "2030",
+  //     }
+  //   ]
+
+  // }
 
   function isPersonalInfo(event){
     return event.target.classList.contains("personalInfo")
@@ -66,6 +111,24 @@ function Main() {
   function isEducation(event){
     return event.target.classList.contains("education")
   }
+  function findIndexFromKey(obj, key, name){
+    return obj[name].findIndex(theObj => theObj.key === key)
+  }
+
+  function changeCVData(oldObj, event, context) {
+
+    let targetKey = event.target.parentElement.getAttribute(`data-${context}`);
+    let targetIndex = findIndexFromKey(oldObj, targetKey, context);
+    let changedProperty = event.target.name
+
+      console.log(event.target.value)
+      let newObj = {
+       ...oldObj
+      }
+      newObj[context][targetIndex][changedProperty] = event.target.value
+
+        return newObj;
+      }
 
   function handleChange(event){
     
@@ -80,31 +143,40 @@ function Main() {
     }
   
     else if(isExperience(event)){
-      let experienceIndex = event.target.getAttribute("key");
 
-      console.log(event.target)
+      let context = "experience";
+      
+      // console.log(changeCVData(cvData, event, context))
 
-      console.log()
-
-      console.log("Yes it is change in experience")
+       setCVData(cvData => {
+        return changeCVData(cvData, event, context);
+       });
     }
 
     else if (isEducation(event)) {
       console.log("Yes it is change in education")
     }
     
-
   }
 
   return (
     <main>
+
+
       <section className='inputSection'>
+
         <InputFields cvData={cvData} handleChange={handleChange}/>
+
       </section>
 
+
       <section className='previewSection'>
+
         <CV cvData={cvData}/>
+
       </section>
+
+
 
     </main>
   )

@@ -21,10 +21,10 @@ function Main() {
       {
         key: "00", 
         position: "Hero",
-        company: "Film",
-        city: "Nepal",
-        from: "2000",
-        to: "2014"
+        company: "Rajesh Hamal Pvt. Ltd.",
+        city: "Kathmandu, Nepal",
+        from: "BigBangTheory",
+        to: "BigCrunch"
       },
       {
         key: "01",

@@ -28,7 +28,7 @@ button {
 	border-radius: 6px;
 	cursor: pointer;
 	padding: 0.25rem 0.5rem;
-	transition: 0.4s ease-in-out all;
+	transition: 0.5s ease-in-out all;
 	height: 2.3rem;
 	font-size: 1rem;
 }

@@ -16,7 +16,7 @@ function Education({ cvData, handleChange }) {
             />
           );
         })}
-        <button class="add-btn add-education-btn">Add Education</button>
+        <button className="add-btn add-education-btn">Add Education</button>
       </div>
     </>
   );

@@ -3,9 +3,7 @@ import "./stylesheets/CVstyles.css"
 
 function CV(props) {
   const {firstname, lastname, title, address, phoneNumber, email, description, imgURL} = props.cvData.personalInfo  
-  
-  
-
+  const [{ key, position, company, city , from , to }, ...remaining] = props.cvData.experience
   return (
     <>
 			<div className="cv-base">
@@ -17,19 +15,19 @@ function CV(props) {
 						<h3 className="contact-heading blue-section-headings">CONTACTS</h3>
 						<div className="divider-line" />
 						<ul className="contact-informations">
-							<li class="phone-number"><i class="fa-solid fa-phone"></i><span>{phoneNumber}</span></li>
-							<li class="email-address"><i class="fa-regular fa-envelope"></i><span>{email}</span></li>
-							<li class="address"><i class="fa-solid fa-location-dot"></i><span>{address}</span></li>
+							<li className="phone-number"><i className="fa-solid fa-phone"></i><span>{phoneNumber}</span></li>
+							<li className="email-address"><i className="fa-regular fa-envelope"></i><span>{email}</span></li>
+							<li className="address"><i className="fa-solid fa-location-dot"></i><span>{address}</span></li>
 						</ul>
 					</div>
 					<div className="skills-area">
 						<h3 className="skills-heading blue-section-headings">SKILLS</h3>
 						<div className="divider-line"></div>
 						<ul className="skills-list">
-							<li className="skill"><i className="fa-solid fa-circle fa-2xs"></i>HTML</li>
-							<li className="skill"><i className="fa-solid fa-circle fa-2xs"></i>CSS3</li>
+							<li className="skill"><i className="fa-solid fa-circle fa-2xs"></i>Everything</li>
+							{/* <li className="skill"><i className="fa-solid fa-circle fa-2xs"></i>CSS3</li>
 							<li className="skill"><i className="fa-solid fa-circle fa-2xs"></i>JavaScript</li>
-							<li className="skill"><i className="fa-solid fa-circle fa-2xs"></i>React</li>
+							<li className="skill"><i className="fa-solid fa-circle fa-2xs"></i>React</li> */}
 						</ul>
 					</div>
 				</div>		
@@ -44,16 +42,16 @@ function CV(props) {
 					<div className="cv-education-section white-children">
 
 						<h2 className="cv-education-heading cv-headings">Education</h2>
-						<div className="divider-line-for-white"></div>
+						<div className="divider-line-for-white" />
 
 						<div className="cv-course">
 							<div className="course-highlights">
 	
-								<span className="cv-course-name">BSc. CSIT </span>
-								<span className="cv-duration"> (2020 - 2024)</span>
+								<span className="cv-course-name">{props.cvData.education[0].course} </span>
+								<span className="cv-duration">({props.cvData.education[0].from} - {props.cvData.education[0].to}) </span>
 							</div>
 							<div className="cv-location">
-                  Kathmandu
+                  					{props.cvData.education[0].university}, {props.cvData.education[0].city}
 							</div>
 						</div>
 
@@ -68,12 +66,12 @@ function CV(props) {
 						<div className="cv-experience">
 							<div className="course-highlights">
 	
-								<span className="cv-experience-name">Sr. Software Engineer</span>
-								<span className="cv-duration"> (2024 - 2030)</span>
+								<span className="cv-experience-name">{position} </span>
+								<span className="cv-duration">({from } - {to})</span>
 							</div>
-							<div className="cv-company">Google Pvt. Ltd, </div>
+							<div className="cv-company">{company}</div>
 							<div className="cv-location">
-								California, USA
+								{city}
 							</div>
 						</div>
 
@@ -84,34 +82,3 @@ function CV(props) {
   )
   }
 export default CV;
-
-
-// import React from 'react'
-// import "./stylesheets/CVstyles.css"
-
-
-// function CV(props) {
-//   const {firstname, lastname, title, address, phoneNumber, email} = props.cvData.personalInfo  
-  
-
-//   return (
-//     <section>
-//     <div className='cv-base' style={{overflow: "auto"}} >
-//       <div className='name'>{firstname} {lastname}</div>
-//       <div className='title'>{title}</div>
-//       <div className='address'>{address}</div>
-//       <div className='phoneNumber'>{phoneNumber}</div>
-//       <div className='email'>{email}</div>
-//       {
-//         props.cvData.experience.map(exp => <pre className="experience" key={exp.key}>{JSON.stringify(exp)}</pre>)
-//       }
-//       {
-//         props.cvData.education.map(degree => <pre className="education" key={degree.key}>{JSON.stringify(degree)}</pre>)
-//       }
-
-//     </div>
-
-//     </section>
-//   )
-//   }
-// export default CV;

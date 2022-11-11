@@ -108,7 +108,7 @@ li > i {
 
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 1.5rem;
 
 	overflow-y: auto;
 }
@@ -132,8 +132,10 @@ li > i {
 }
 
 .cv-title {
-	font-size: 14px;
-	letter-spacing: 1px;
+	font-size: 15px;
+	letter-spacing: 0.6px;
+	font-weight: 501;
+	color: #2e1515;
 }
 .cv-headings {
 	color: var(--cv-blue);

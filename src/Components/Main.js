@@ -1,5 +1,6 @@
 import React from 'react'
 import InputFields from './InputFields'
+import { isPersonalInfo, isExperience, isEducation, findIndexFromKey } from './Utilities/handleInputs'
 import CV from "./CV"
 import "./stylesheets/main.css"
 
@@ -13,6 +14,8 @@ function Main() {
       email: "gmail@rajeshhamal.com",
       phoneNumber: "rajeshhamal",
       address: "Rajesh Hamal Nibas",
+      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur commodi, nihil facere ullam Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sapiente est dicta quisquam",
+      imgURL: "https://i.scdn.co/image/ab67616d0000b27378c8fe2c8e809ef6ce49bd3b"
     },
     experience: [
       {
@@ -52,68 +55,6 @@ function Main() {
     ]
 
   });
-  // let newCVData = {
-  //   personalInfo: {
-  //     firstname: "Not Rajesh",
-  //     lastname: "Hamal",
-  //     title: "Not Maha Nayak",
-  //     email: "Not gmail@rajeshhamal.com",
-  //     phoneNumber: "Not rajeshhamal",
-  //     address: "Not Rajesh Hamal Nibas",
-  //   },
-  //   experience: [
-  //     {
-  //       key: "00", 
-  //       position: "Not Hero",
-  //       company: "Not Film",
-  //       city: "Not Nepal",
-  //       from: "Not 2000",
-  //       to: "Not 2014"
-  //     },
-  //     {
-  //       key: "01",
-  //       position: "Not Actor",
-  //       company: "Not Film",
-  //       city: "Not Nepal",
-  //       from: "Not 2040",
-  //       to: "Not 2045"
-  //     } 
-  //   ],
-  //   education: [
-  //     {
-  //       key: "00",
-  //       university: "Rajesh Hamal University",
-  //       city: "Rajesh Hamal Nibas",
-  //       course: "Masters in Rajesh Hamal", 
-  //       from: "2020",
-  //       to: "2024",
-  //     },
-  //     {
-  //       key: "01",
-  //       university: "Hamal Rajesh University",
-  //       city: "Rajesh Hamal Nibas ko xeu",
-  //       course: "BSc. Rajesh Hamal",
-  //       from: "2027",
-  //       to: "2030",
-  //     }
-  //   ]
-
-  // }
-
-  function isPersonalInfo(event){
-    return event.target.classList.contains("personalInfo")
-  }
-
-  function isExperience(event){
-    return event.target.classList.contains("experienceInput")
-  }
-
-  function isEducation(event){
-    return event.target.classList.contains("educationInput")
-  }
-  function findIndexFromKey(obj, key, name){
-    return obj[name].findIndex(theObj => theObj.key === key)
-  }
 
   function changeCVData(oldObj, event, context) {
 
@@ -151,7 +92,6 @@ function Main() {
 
     else if (isEducation(event)) {
       let context = "education";
-      console.log(context, " yes it is here")
 
       setCVData(cvData => {
         return changeCVData(cvData, event, context);

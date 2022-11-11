@@ -1,7 +1,6 @@
 import React from 'react'
 
-function  ExBundle({experience, handleChange, removeExperience}) {
-	
+function  ExBundle({experience, handleChange, removeInputHandler}) {
 	const {key, position, company, city, from, to} = experience
   return (
 	<>
@@ -12,7 +11,7 @@ function  ExBundle({experience, handleChange, removeExperience}) {
 		<input type="text" onChange={handleChange} placeholder="From" className='experienceInput' value={from} name="from" />
 		<input type="text" onChange={handleChange} placeholder="To" className='experienceInput'	  value={to} name="to" />
 	</div>
-	<button onClick={removeExperience} data-experiencenum={key}>Delete</button>
+	<button onClick={removeInputHandler} className="remove-btn">Delete</button>
 	</>
   )
 }

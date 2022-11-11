@@ -2,6 +2,178 @@
 	width: 643px;
 	min-height: 909px;
 	background-color: white;
+	font-family: Arial, Helvetica, sans-serif;
 
 	box-shadow: 7px 7px 23px 10px rgba(0, 0, 0, 0.25);
+	position: sticky;
+	top: 1rem;
+	
 }
+
+.previewSection {
+	flex-grow: 1.2;
+	padding: 2rem 1rem;
+}
+
+
+
+/* blue section */
+
+.blue-section{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+
+	width: var(--blue-section-width);
+	height: 100%;
+
+	padding: 1rem;
+	font-size: 0.9rem;
+	overflow-wrap: break-word;
+
+	background-color: var(--cv-blue);
+	color: white;
+
+	display: flex; 
+	flex-direction: column;
+	gap: 1rem;
+	/* border: 2px solid blueviolet; */
+
+
+}
+
+.blue-section-headings {
+	letter-spacing: 0.029em;
+	text-transform: uppercase;
+}
+
+.blue-section > * {
+	/* outline: 1px solid red; */
+}
+ul > li {
+	margin-block: 0.6rem;
+	display: flex;
+	align-items: center;
+
+}
+
+li > i {
+	margin-right: 0.5rem;
+}
+
+.divider-line {
+	width: 90.4%;
+	height: 1.1px;
+	background-color: white;
+	margin: 0.5rem 1rem 1rem 0;
+}
+
+.skills-list  {
+	list-style-type: disc;
+}
+
+.profile-pic {
+	/* width: 7em; */
+	/* border: 2px solid red; */
+	text-align: center;
+	/* width: 100%; */
+	height: 10rem;
+	width: 10rem;
+	
+}
+
+.the-photo {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+
+/* white section */
+
+.white-section {
+
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+
+	padding: 1.5rem 1rem;
+
+	width: calc(100% - var(--blue-section-width)); 
+	height: 100%;
+	color: #333333;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	overflow-y: auto;
+}
+
+.divider-line-for-white {
+	width: 90%;
+	height: 1px;
+	margin: 0.5rem 0 1rem 0;
+	background-color: var(--cv-blue);
+}
+
+.general-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	font-weight: 300;
+}
+
+.cv-name {
+	color: var(--cv-blue);
+}
+
+.cv-title {
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+.cv-headings {
+	color: var(--cv-blue);
+	font-size: 1.4em;
+	letter-spacing: 0.034em;
+	font-weight: 600;
+	font-style: normal;
+	text-transform: uppercase;
+}
+
+.cv-description {
+	font-size: 14px;
+	color: #1c1c1c;
+	font-weight: 200;
+	letter-spacing: 0.43px;
+}
+
+/* Education */
+
+.cv-course, .cv-experience {
+	padding-left: 1rem;
+}
+.cv-course-name, .cv-experience-name {
+	color: #1f1f1f;
+	letter-spacing: 0.022em;
+	font-weight: 600;
+}
+
+.cv-duration {
+	letter-spacing: 0.07em;
+}
+
+.cv-location {
+	line-height: 1.4;
+	letter-spacing: 1.25px;
+}
+
+.cv-company {
+	line-height: 1.4;
+	letter-spacing: 0.047em;
+	font-weight: 400;
+}
+

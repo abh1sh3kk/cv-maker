@@ -1,6 +1,5 @@
 main {
 	background-color: white;
-	min-height: 100vh;
 
 	display: flex;
 	flex-wrap: wrap;
@@ -8,19 +7,21 @@ main {
 
 .previewSection, .inputSection {
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 }
 
 .inputSection {
 	min-width: 320px;
-	background-color: rgb(225, 225, 225);
-	flex-grow: 0.8;
-	padding: 1rem 1rem;
+	/* background-color: rgb(225, 225, 225); */
+	padding: 2rem 1rem;
+	/* flex-basis: 600px; */
+	justify-content: flex-end;
+	flex: 1;
 }
 
 .previewSection {
-	flex-grow: 1.2;
-	 
+	justify-content: flex-start;
+	position: relative;
 	padding: 2rem 1rem;
+	flex: 1;
 }

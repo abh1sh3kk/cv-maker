@@ -1,5 +1,6 @@
 nav {
-	background-color: #222831;
+	/* background-color: #222831; */
+	background-color: var(--cv-blue);
 	color: #ffffff;
 
 	display: flex;
@@ -17,10 +18,10 @@ nav {
 
 .saveAsPdf{
 	padding: 8px 20px;
-	background-color: #37AB00;
+	background-color: var(--green);
 }
 .reset {
 	padding: 8px 20px;
-	background-color: #FF2F2F;
+	background-color: var(--bright-red);
 }
 

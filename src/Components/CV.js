@@ -4,6 +4,7 @@ import "./stylesheets/CVstyles.css"
 function CV(props) {
   const {firstname, lastname, title, address, phoneNumber, email, description, imgURL} = props.cvData.personalInfo  
   const [{ key, position, company, city , from , to }, ...remaining] = props.cvData.experience
+  console.log(remaining, key)
   return (
     <>
 			<div className="cv-base">

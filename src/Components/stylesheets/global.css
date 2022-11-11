@@ -4,29 +4,68 @@
 	box-sizing: border-box;
 }
 
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+	--bright-red: rgb(161, 27, 27);
+	--dark-red: #312222;
+	--red-focus: #D14134;
+	--green: rgb(27, 161, 72);
+	--blue-section-width : 35%; 
+	--cv-blue: #222831 ;
+	--text-color: #333333;
+	--cv-blue-dim: #44484d86 ;
+	--light-blue: #373f49;
+}
+
 button {
 	border: 0;
 	outline: none;
 	color: white;
-	background-color: #37ab00;
+	background-color: var(--green);
 	border-radius: 6px;
 	cursor: pointer;
 	padding: 0.25rem 0.5rem;
-	transition: 0.2s ease-in-out all;
+	transition: 0.4s ease-in-out all;
+	height: 2.3rem;
+	font-size: 1rem;
 }
 button:hover {
-	transform: scale(1.05);
+	box-shadow: 0 0 5px var(--cv-blue-dim);
 }
 button:active {
 	transform: scale(0.9);
 }
 input {
-	width: 80%;
+	color: var(--cv-blue);
+	width: 100%;
 	margin-block: 0.3rem;
+	font-size: 16px;
 	border-radius: 5px;
 	border: 2px solid grey;
 	outline: none;
-	height: 2rem;
-	padding: 0 0.5rem;
-
+	height: 2.5rem;
+	padding: 0 0.7rem;
+	
+}
+input:focus {
+	border: 2px solid var(--light-blue);
+	box-shadow: 0 0 5px var(--cv-blue-dim);
+}
+.add-btn {
+	width: 100%;
+	margin-block: 0.5rem;
+	background-color: var(--cv-blue);
+}
+.add-btn:focus {
+	box-shadow: 0 0 20px rgb(70, 70, 70);
+}
+.remove-btn {
+	background-color: var(--dark-red);
+	margin-block: 0.5rem;
+	display: block;
+	width: 100%;
+	
 }

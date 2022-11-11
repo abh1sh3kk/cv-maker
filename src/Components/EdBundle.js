@@ -11,7 +11,7 @@ function EdBundle({degree, handleChange}) {
 		<input type="text" onChange={handleChange} className="educationInput" placeholder="From" value={from} name="from"/>
 		<input type="text" onChange={handleChange} className="educationInput" placeholder="To" value={to} name="to"/>
 	</div>
-	<button>Delete</button>
+	<button className='remove-btn'>Delete</button>
 	</>
   )
 }
